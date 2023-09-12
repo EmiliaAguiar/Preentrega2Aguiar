@@ -45,3 +45,23 @@ while (claseProducto !== '0') {
     claseProducto = prompt('Ingresa qué tipo de producto estás buscando: FLUO o LED \n\n Escribe 0 para salir del programa');
 }
 
+
+
+function encontrarProductoPorNombre(nombreProducto) {
+    const productoEncontrado = productos.find((producto) =>
+        producto.nombre.toLowerCase().includes(nombreProducto.toLowerCase())
+    );
+
+    if (productoEncontrado) {
+        alert(`Producto encontrado: ${productoEncontrado.nombre} - Precio: $${productoEncontrado.precio}`);
+    } else {
+        alert(`No se encontró ningún producto con el nombre ${nombreProducto}`);
+    }
+}
+
+let nombreProducto = prompt('👉🏼Ingresa el nombre del producto que estás buscando:\n(Escribe 0 para salir del programa)');
+
+while (nombreProducto !== '0') {
+    encontrarProductoPorNombre(nombreProducto);
+    nombreProducto = prompt('👉🏼Ingresa el nombre del producto que estás buscando:\n(Escribe 0 para salir del programa)');
+}
